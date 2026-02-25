@@ -480,7 +480,7 @@
         <div class="caw-box" id="caw-box">
           <div class="caw-header" id="caw-header">
             <div class="caw-header-controls">
-              <button class="caw-close" id="caw-close" aria-label="Zavrit">
+              <button class="caw-close" id="caw-close" aria-label="Zavřít">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
                 </svg>
@@ -499,7 +499,7 @@
           </div>
           <div class="caw-input-container">
             <div class="caw-input-row">
-              <textarea class="caw-input" id="caw-input" placeholder="Napiste zpravu..." rows="1"></textarea>
+              <textarea class="caw-input" id="caw-input" placeholder="Napište zprávu..." rows="1"></textarea>
               <button class="caw-send" id="caw-send">
                 <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
               </button>
@@ -601,13 +601,13 @@
         });
         const data = await res.json();
         typing.remove();
-        const answer = data.answer || 'Omlouvam se, nastala chyba.';
+        const answer = data.answer || 'Omlouvám se, nastala chyba.';
         addMsg(answer, 'bot');
         chatHistory.push({ text, isUser: true });
         chatHistory.push({ text: answer, isUser: false });
       } catch {
         typing.remove();
-        addMsg('Nepodarilo se spojit se serverem. Zkuste to znovu.', 'bot');
+        addMsg('Nepodařilo se spojit se serverem. Zkuste to prosím znovu.', 'bot');
       }
 
       isLoading = false;
@@ -629,10 +629,10 @@
 
       const feedbackHTML = type === 'bot' ? `
         <div class="caw-feedback" data-msgid="${msgId}">
-          <button class="caw-feedback-btn" data-rating="up" title="Dobra odpoved">
+          <button class="caw-feedback-btn" data-rating="up" title="Dobrá odpověď">
             <svg viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
           </button>
-          <button class="caw-feedback-btn" data-rating="down" title="Spatna odpoved">
+          <button class="caw-feedback-btn" data-rating="down" title="Špatná odpověď">
             <svg viewBox="0 0 24 24"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"/></svg>
           </button>
         </div>
@@ -687,17 +687,17 @@
 
       const success = document.createElement('div');
       success.className = 'caw-feedback-success';
-      success.textContent = rating === 'up' ? 'Dekujeme za hodnoceni!' : 'Dekujeme za zpetnou vazbu.';
+      success.textContent = rating === 'up' ? 'Děkujeme za hodnocení!' : 'Děkujeme za zpětnou vazbu.';
       feedbackContainer.after(success);
       setTimeout(() => success.remove(), 3000);
     }
 
     const loadingMessages = [
-      'Prohledavam dokumentaci...',
-      'Analyzuji dostupne informace...',
-      'Hledam nejrelevantnejsi udaje...',
-      'Overuji informace...',
-      'Pripravuji odpoved...'
+      'Prohledávám dokumentaci...',
+      'Analyzuji dostupné informace...',
+      'Hledám nejrelevantnější údaje...',
+      'Ověřuji informace...',
+      'Připravuji odpověď...'
     ];
 
     function addTyping() {

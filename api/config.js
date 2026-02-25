@@ -9,13 +9,22 @@ module.exports = async (req, res) => {
 
   if (req.method === 'OPTIONS') return res.status(200).end();
 
+  // Determine base URL for assets
+  const proto = req.headers['x-forwarded-proto'] || 'https';
+  const host = req.headers['x-forwarded-host'] || req.headers.host || 'vasefirma-ai.vercel.app';
+  const baseUrl = `${proto}://${host}`;
+
   res.status(200).json({
     name: 'Vaše Firma',
     widgetConfig: {
       primaryColor: '#564fd8',
+      logo: `${baseUrl}/logo.png`,
       logoBackground: '#ffffff',
-      logoZoom: 65,
+      logoZoom: 80,
       logoPosition: 50,
+      coverPhoto: `${baseUrl}/cover.jpg`,
+      coverPhotoPosition: 50,
+      coverPhotoZoom: 200,
       position: 'bottom-right',
       welcomeHeadline: 'Jak vám mohu pomoci?',
       welcomeMessage: 'Zeptejte se mě na cokoliv ohledně zaměstnanecké aplikace, benefitů, směrnic nebo firemních procesů.',
