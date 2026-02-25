@@ -1,0 +1,6 @@
+node_modules/
+.env
+.env.local
+.vercel/
+aia_widget_ref.js
+*.log

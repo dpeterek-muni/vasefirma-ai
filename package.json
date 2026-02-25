@@ -1,0 +1,16 @@
+{
+  "name": "vasefirma-ai-assistant",
+  "version": "1.0.0",
+  "description": "AI Asistent pro vasefirma.munipolis.cz",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod",
+    "ingest": "node scripts/ingest-excel.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "openai": "^4.24.1",
+    "xlsx": "^0.18.5"
+  }
+}
