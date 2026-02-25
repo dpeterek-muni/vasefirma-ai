@@ -3,8 +3,7 @@
   "name": "vasefirma-ai",
   "framework": null,
   "functions": {
-    "api/query.js": { "maxDuration": 60 },
-    "api/ingest.js": { "maxDuration": 300 }
+    "api/query.js": { "maxDuration": 60 }
   },
   "headers": [
     {
